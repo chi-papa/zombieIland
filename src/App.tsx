@@ -26,7 +26,7 @@ import {
   TypingEffect,
   ZOMBIE_WORDS 
 } from './types';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { audio } from './utils/audio';
 import RyuSprite from './components/RyuSprite';
 import ZombieSprite from './components/ZombieSprite';
