@@ -4,6 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Google AI Studio App</title>
+    <script>
+      window.addEventListener('error', function(event) {
+        var errDiv = document.getElementById('runtime-error-display');
+        if (!errDiv) {
+          errDiv = document.createElement('div');
+          errDiv.id = 'runtime-error-display';
+          errDiv.style.position = 'fixed';
+          errDiv.style.top = '10px';
+          errDiv.style.left = '10px';
+          errDiv.style.right = '10px';
+          errDiv.style.backgroundColor = '#991b1b';
+          errDiv.style.color = '#ffffff';
+          errDiv.style.padding = '15px';
+          errDiv.style.fontFamily = 'monospace';
+          errDiv.style.fontSize = '14px';
+          errDiv.style.zIndex = '99999';
+          errDiv.style.borderRadius = '5px';
+          errDiv.style.border = '2px solid #ef4444';
+          errDiv.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.3)';
+          errDiv.style.whiteSpace = 'pre-wrap';
+          document.body.appendChild(errDiv);
+        }
+        errDiv.innerText += "❌ RUNTIME ERROR:\n" + event.message + "\nat " + event.filename + ":" + event.lineno + ":" + event.colno + "\n\n" + (event.error ? event.error.stack : '') + "\n\n";
+      });
+      window.addEventListener('unhandledrejection', function(event) {
+        var errDiv = document.getElementById('runtime-error-display');
+        if (!errDiv) {
+          errDiv = document.createElement('div');
+          errDiv.id = 'runtime-error-display';
+          errDiv.style.position = 'fixed';
+          errDiv.style.top = '10px';
+          errDiv.style.left = '10px';
+          errDiv.style.right = '10px';
+          errDiv.style.backgroundColor = '#991b1b';
+          errDiv.style.color = '#ffffff';
+          errDiv.style.padding = '15px';
+          errDiv.style.fontFamily = 'monospace';
+          errDiv.style.fontSize = '14px';
+          errDiv.style.zIndex = '99999';
+          errDiv.style.borderRadius = '5px';
+          errDiv.style.border = '2px solid #ef4444';
+          errDiv.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.3)';
+          errDiv.style.whiteSpace = 'pre-wrap';
+          document.body.appendChild(errDiv);
+        }
+        errDiv.innerText += "❌ UNHANDLED REJECTION:\n" + event.reason + "\n\n";
+      });
+    </script>
   </head>
   <body>
     <div id="root"></div>
