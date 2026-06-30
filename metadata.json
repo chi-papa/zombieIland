@@ -1,0 +1,6 @@
+{
+  "name": "Zombie Typing Land",
+  "description": "タイピングの波動でゾンビを撃退し、孤島からSOSを送信して脱出する、レトロなCRTモニター風タイピングサバイバルゲーム。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
